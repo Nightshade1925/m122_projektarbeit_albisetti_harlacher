@@ -26,4 +26,20 @@ Skript 2
 
 | Testfall | Testbeschreibung | Testdaten | erwartetes Testresultat | erhaltenes Testresultat | Tester | Testdatum und Teststatus |
 |  - | - | - | - | - | - | - |
-| Erstmaliger Aufruf | Das Skript soll mit einem Verzeichnis als parameter augerufen werden in welchem 2 Repos sind:<pre> skript2.bash /tmp/myrepos /tmp/commits.csv</pre> | Verzeichnis mit den GIT-Repos die mit dem Skript 1 geklont wurden:<pre>/tmp/myrepos</pre> | Alle Repos aus /tmp/myrepos werden gelesen und ein File /tmp/commits.csv erstellt mit allen Commits beider Repos | | | |
+| Erstmaliger Aufruf | Das Skript soll mit einem Verzeichnis als parameter augerufen werden in welchem 2 Repos sind:<pre> python3 git_extract_commits.py /tmp/myrepos /tmp/commits.csv</pre> | Verzeichnis mit den GIT-Repos die mit dem Skript 1 geklont wurden:<pre>/tmp/myrepos</pre> | Alle Repos aus /tmp/myrepos werden gelesen und ein File /tmp/commits.csv erstellt mit allen Commits beider Repos | | | |
+
+| Testfall | Testbeschreibung | Testdaten | erwartetes Testresultat | erhaltenes Testresultat | Tester | Testdatum und Teststatus |
+|  - | - | - | - | - | - | - |
+| Paramter fehlen | Das Skript soll aufgerufen werden ohne den paramter für das Outputfile:<pre> python3 git_extract_commits.py /tmp/myrepos</pre> | Verzeichnis mit den GIT-Repos die mit dem Skript 1 geklont wurden:<pre>/tmp/myrepos</pre> | Eine Warnung wird ausgegeben welche sagt, dass ein Input Paramter fehlt  | | | |
+
+| Testfall | Testbeschreibung | Testdaten | erwartetes Testresultat | erhaltenes Testresultat | Tester | Testdatum und Teststatus |
+|  - | - | - | - | - | - | - |
+| Verzeichnis leer | Das Skript soll mit einem Verzeichnis als parameter augerufen werden in welchem nichts ist:<pre> python3 git_extract_commits.py /tmp/myrepos /tmp/commits.csv</pre> | Ein leeres Verzeichniss | Eine Warnung wird ausgegeben welche sagt, dass kein Repository im Verzeichnis gefunden wrude  | | | |
+
+| Testfall | Testbeschreibung | Testdaten | erwartetes Testresultat | erhaltenes Testresultat | Tester | Testdatum und Teststatus |
+|  - | - | - | - | - | - | - |
+| Verzeichnis ohne Repo | Das Skript soll mit einem Verzeichnis als parameter augerufen werden in welchem kein Repo ist:<pre> python3 git_extract_commits.py /tmp/myrepos /tmp/commits.csv</pre> | Ein verzeichnis welches kein Repo entält | Eine Warnung wird ausgegeben welche sagt, dass kein Repository im Verzeichnis gefunden wrude  | | | |
+
+| Testfall | Testbeschreibung | Testdaten | erwartetes Testresultat | erhaltenes Testresultat | Tester | Testdatum und Teststatus |
+|  - | - | - | - | - | - | - |
+| Output File ohne Permission | Das Skript soll mit einem Output File als parameter augerufen werden auf welches der momentane user keien berechtigungen hat:<pre> python3 git_extract_commits.py /tmp/myrepos /var/commits.csv</pre> | Ein Output File Path auf welcher der user kein Zugriff hat | Eine Warnung wird ausgegeben welche sagt, dass Berechtigungen fehlen um das Output File zu erstellen | | | |
