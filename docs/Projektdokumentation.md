@@ -7,15 +7,24 @@ Anhand der Analyse wurde folgendes Lösungsdesign entworfen.
 
 ### Aufruf der Skripte
 
-TODO: schreiben sie wie die Skripte aufgerufen werden sollen (d.h. welche Parameter werden übergeben, gibt es Interaktionen mit dem Skript, läuft es automatisch täglich ab?)
+Die Skripts sind mit Python geschrieben und müssen desswegen auch mit Python ausgeführt werden.
+Eine Debugging option ist für beide Skripts vorhanden. Diese verwendet man indem man den Flag "-d" verwendet.
+
+Das Skript lauft nicht automatisch ab.
+
+Beide Skripts verwenden die selbe globale Konfiguration.
 
 #### Script 1
-Scriptname: cloneRepo.bash -b Basedir -f FileWithURL
+'''
+python3 git_clone_update_repos.py -d -b Basedir -f PathToFileWithURL
+'''
 
 #### Script 2
+'''
+python3 git_extract_commits.py -d -b Basedir -o PathForOutputFile
+'''
 
 ### Ablauf der Automation
-
 
 #### Script 1
 ![Activity Diagram Script 1](https://user-images.githubusercontent.com/71868338/160097514-774fc902-b344-4220-a1c2-5a5d7ec9400d.png)
@@ -24,7 +33,13 @@ Scriptname: cloneRepo.bash -b Basedir -f FileWithURL
 
 ### Konfigurationsdateien
 
-TODO: Definieren sie welche Parameter in welchen Konfigurationsdateien gespeichert werden.
+Das Konfiguraiontsfile wird von beiden Skripts verwendet und wird nur für die Log Konfiguration verwendet
+Die Konfiguration ist im JSON Format.
+
+Folgende Parameter sind vorhanden:
+loglevel  - DEBUG, INFO, WARNING, ERROR oder CRITICAL. Definiert das loglevel für die logs in das file 
+logpath   - Definiert wo das Logfile gespeichert wird
+
 
 ## Abgrenzungen zum Lösungsdesign
 
