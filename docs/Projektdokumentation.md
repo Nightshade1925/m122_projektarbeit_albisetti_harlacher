@@ -14,15 +14,13 @@ Das Skript lauft nicht automatisch ab.
 
 Beide Skripts verwenden die selbe globale Konfiguration.
 
+Hier noch eion Beispielaufruf für die Skripts:
+
 #### Script 1
-'''
 python3 git_clone_update_repos.py -d -b Basedir -f PathToFileWithURL
-'''
 
 #### Script 2
-'''
 python3 git_extract_commits.py -d -b Basedir -o PathForOutputFile
-'''
 
 ### Ablauf der Automation
 
