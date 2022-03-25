@@ -1,4 +1,4 @@
-Skript 1
+# Skript 1
 
 | Testfall | Testbeschreibung | Testdaten | erwartetes Testresultat | erhaltenes Testresultat | Tester | Testdatum und Teststatus |
 |  - | - | - | - | - | - | - |
@@ -22,7 +22,7 @@ Skript 1
 repolist.txt mit folgendem Inhalt:<pre>https://gitlab.com/armindoerzbachtbz/m122_praxisarbeit<br>https://gitlab.com/wapdc/InfoSearch/Project-2017</pre> | Verzeichnis wird erstellt und alle Repos werden darin geklont | | | |
 
 
-Skript 2
+# Skript 2
 
 | Testfall | Testbeschreibung | Testdaten | erwartetes Testresultat | erhaltenes Testresultat | Tester | Testdatum und Teststatus |
 |  - | - | - | - | - | - | - |
