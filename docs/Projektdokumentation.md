@@ -17,7 +17,8 @@ Scriptname: cloneRepo.bash -b Basedir -f FileWithURL
 TODO: Hier kommt ihr UML-Activity Diagramm
 #### Script 1
 ![Activity Diagram Script 1](https://user-images.githubusercontent.com/71868338/160097514-774fc902-b344-4220-a1c2-5a5d7ec9400d.png)
-
+#### Script 2
+![M122_LB02_CreateOutputFile drawio](https://user-images.githubusercontent.com/69149487/160097776-1ce4bc69-e995-44b3-bbc2-e776018d5122.png)
 
 ### Konfigurationsdateien
 
