@@ -35,7 +35,7 @@ Das Konfiguraiontsfile wird von beiden Skripts verwendet und wird nur für die L
 Die Konfiguration ist im JSON Format.
 
 Folgende Parameter sind vorhanden:
-loglevel  - DEBUG, INFO, WARNING, ERROR oder CRITICAL. Definiert das loglevel für die logs in das file 
+loglevel  - DEBUG, INFO, WARNING, ERROR oder CRITICAL. Definiert das loglevel für die logs in das file\
 logpath   - Definiert wo das Logfile gespeichert wird
 
 
