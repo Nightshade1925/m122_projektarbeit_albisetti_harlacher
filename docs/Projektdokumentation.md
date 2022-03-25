@@ -34,7 +34,7 @@ python3 git_extract_commits.py -d -b Basedir -o PathForOutputFile
 Das Konfiguraiontsfile wird von beiden Skripts verwendet und wird nur für die Log Konfiguration verwendet
 Die Konfiguration ist im JSON Format.
 
-Folgende Parameter sind vorhanden:
+Folgende Parameter sind vorhanden:\
 loglevel  - DEBUG, INFO, WARNING, ERROR oder CRITICAL. Definiert das loglevel für die logs in das file\
 logpath   - Definiert wo das Logfile gespeichert wird
 
