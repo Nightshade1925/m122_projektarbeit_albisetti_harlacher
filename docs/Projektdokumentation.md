@@ -17,10 +17,10 @@ Beide Skripts verwenden die selbe globale Konfiguration.
 Hier noch eion Beispielaufruf für die Skripts:
 
 #### Script 1
-python3 git_clone_update_repos.py -d -b Basedir -f PathToFileWithURL
+git_clone_update_repos.py -d -b  /tmp/myrepos -f repolist.txt
 
 #### Script 2
-python3 git_extract_commits.py -d -b Basedir -o PathForOutputFile
+python3 git_extract_commits.py -d -b /tmp/myrepos -o /tmp/commits.csv
 
 ### Ablauf der Automation
 

@@ -15,7 +15,7 @@ Das zweite Skript soll von allen GIT-Repos in diesem Verzeichnis alle Commits au
 Ihr Lehrer hat dann ein Skript, das diese graphisch dastellt. Das Resultat sieht dann ungefähr so aus:
     ![Sample Output](images/sample_output.png) 
 
-### Skript 1: [git_clone_update_repos.bash](bin/git_clone_update_repos.bash)
+### Skript 1: [git_clone_update_repos.bash](bin/git_clone_update_repos.py)
 
 Die Aufgaben des Skripts sind
 
