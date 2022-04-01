@@ -1,3 +1,1 @@
-#!/bin/bash
-
-# Hier kommt ihr Code
+import gitpython
