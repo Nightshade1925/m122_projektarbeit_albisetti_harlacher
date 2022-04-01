@@ -21,6 +21,10 @@
 | Überprüfe ob das existierende Repo nur ein pull command macht und kein clone command | Das Skript soll mit einem input file aufgerufen werden, in welchem nur verfügbare Git-URLs sind. Diese sollen in ein noch nicht existierendes Verzeichnis geklont werden:<pre>git_clone_update_repos.py repolist.txt /tmp/myrepos</pre> | Zuerst muss das folgende Repository im Zielverzeichnis geklont werden <pre>git clone https://gitlab.com/armindoerzbachtbz/m122_praxisarbeit</pre>
 repolist.txt mit folgendem Inhalt:<pre>https://gitlab.com/armindoerzbachtbz/m122_praxisarbeit<br>https://gitlab.com/wapdc/InfoSearch/Project-2017</pre> | Verzeichnis wird erstellt und alle Repos werden darin geklont | | | |
 
+| Testfall | Testbeschreibung | Testdaten | erwartetes Testresultat | erhaltenes Testresultat | Tester | Testdatum und Teststatus |
+|  - | - | - | - | - | - | - |
+| Installation nach Dokumentation | Installation des Skripts Schritt für Schritt nach Dokumentation | Geklontest git Repo mit Dokumentation | Ein funktionierends Skript | | | |
+
 
 # Skript 2
 
@@ -43,3 +47,8 @@ repolist.txt mit folgendem Inhalt:<pre>https://gitlab.com/armindoerzbachtbz/m122
 | Testfall | Testbeschreibung | Testdaten | erwartetes Testresultat | erhaltenes Testresultat | Tester | Testdatum und Teststatus |
 |  - | - | - | - | - | - | - |
 | Output File ohne Permission | Das Skript soll mit einem Output File als parameter augerufen werden auf welches der momentane user keien berechtigungen hat:<pre> python3 git_extract_commits.py /tmp/myrepos /var/commits.csv</pre> | Ein Output File Path auf welcher der user kein Zugriff hat | Eine Warnung wird ausgegeben welche sagt, dass Berechtigungen fehlen um das Output File zu erstellen | | | |
+
+| Testfall | Testbeschreibung | Testdaten | erwartetes Testresultat | erhaltenes Testresultat | Tester | Testdatum und Teststatus |
+|  - | - | - | - | - | - | - |
+| Installation nach Dokumentation | Installation des Skripts Schritt für Schritt nach Dokumentation | Geklontest git Repo mit Dokumentation | Ein funktionierends Skript | | | |
+
