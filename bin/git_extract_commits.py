@@ -12,6 +12,9 @@ class GitExtractCommits:
 
 	def __init__(self):
 		config = Utils.load_config()
+		print(config.get("loglevel"))
+		print(config.get("logpath"))
+
 		Utils.register_handlers(config.get("loglevel"), config.get("logpath"))
 
 		self.base_dir = ""
@@ -81,11 +84,10 @@ class GitExtractCommits:
 			#	default_branch = 'main'
 			try:
 				for commit in repo.iter_commits():
-					print(commit.committed_date)
 					output_file.write(f"{os.path.dirname(self.base_dir)},"
 									  f"{time.strftime('%Y %M %D', time.localtime(commit.committed_date))},"
 									  f"{commit.hexsha},"
-									  f"{commit.committer.name}")
+									  f"{commit.committer.name}\n")
 			except Exception as e:
 				raise CreateOutputFileError(f'unable to parse commits to output file: {e}')
 		output_file.close()

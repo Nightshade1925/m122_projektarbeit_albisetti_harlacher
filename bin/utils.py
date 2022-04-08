@@ -30,8 +30,8 @@ class Utils:
 	@staticmethod
 	def register_file_handler(log_path: str, file_log_level: str) -> logging.FileHandler:
 		formatter = logging.Formatter('{asctime} {name} {levelname:8s} {message}', style='{')
-		handler = logging.handlers.RotatingFileHandler(filename=log_path,
-													   backupCount=30,
+		handler = logging.handlers.RotatingFileHandler(filename='log_file.logs',
+													   backupCount=15,
 													   maxBytes=10000)  # 10kb
 		handler.setFormatter(formatter)
 		handler.setLevel(file_log_level)
