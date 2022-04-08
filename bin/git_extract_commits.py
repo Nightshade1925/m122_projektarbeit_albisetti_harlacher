@@ -85,7 +85,7 @@ class GitExtractCommits:
 			try:
 				for commit in repo.iter_commits():
 					output_file.write(f"{os.path.dirname(self.base_dir)},"
-									  f"{time.strftime('%Y %M %D', time.localtime(commit.committed_date))},"
+									  f"{time.strftime('%Y%m%d', time.localtime(commit.committed_date))},"
 									  f"{commit.hexsha},"
 									  f"{commit.committer.name}\n")
 			except Exception as e:
