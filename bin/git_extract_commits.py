@@ -1,6 +1,9 @@
+import logging
 import argparse
 import git
 import os
+
+from utils import MakeLoggerClass
 
 base_dir = ""
 output_file = ""
@@ -56,4 +59,5 @@ def create_output_file():
 
 
 if __name__ == '__main__':
+	MakeLoggerClass.register_handlers()
 	start()
