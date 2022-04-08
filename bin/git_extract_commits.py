@@ -80,7 +80,7 @@ class GitExtractCommits:
 		for repo in self.repos:
 			try:
 				for commit in repo.iter_commits():
-					output_file.write(f"{repo},"
+					output_file.write(f"{repo.remotes.origin.url.split('.git')[0].split('/')[-1]},"
 									  f"{time.strftime('%Y%m%d', time.localtime(commit.committed_date))},"
 									  f"{commit.hexsha},"
 									  f"{commit.committer.name}\n")
