@@ -71,7 +71,7 @@ class GitExtractCommits:
 	def create_output_file(self):
 		self.logger.info(f'Creating output file: {self.output_file}')
 		try:
-			output_file = open(self.output_file, "w")
+			output_file = open(self.output_file, "w+")
 			# write header
 			output_file.write("Zielverzeichnis,Datum,Commit-Hash,Author")
 		except Exception as e:
