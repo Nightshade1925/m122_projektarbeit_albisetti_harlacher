@@ -71,7 +71,7 @@ class GitExtractCommits:
 	def create_output_file(self):
 		self.logger.info(f'Creating output file: {self.output_file}')
 		try:
-			output_file = open(self.output_file, "w+")
+			output_file = open(self.output_file, "w")
 			# write header
 			output_file.write("Zielverzeichnis,Datum,Commit-Hash,Author")
 		except Exception as e:
@@ -80,7 +80,7 @@ class GitExtractCommits:
 		for repo in self.repos:
 			try:
 				for commit in repo.iter_commits():
-					output_file.write(f"{os.path.dirname(repo)},"
+					output_file.write(f"{repo},"
 									  f"{time.strftime('%Y%m%d', time.localtime(commit.committed_date))},"
 									  f"{commit.hexsha},"
 									  f"{commit.committer.name}\n")
