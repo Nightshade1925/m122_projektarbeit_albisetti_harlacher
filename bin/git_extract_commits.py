@@ -1,59 +1,101 @@
+import logging
 import argparse
+import time
+
 import git
 import os
 
-base_dir = ""
-output_file = ""
-repos = []
+from utils import Utils
 
+class GitExtractCommits:
+	logger = logging.getLogger(__name__)
 
-def start():
-	global base_dir, output_file
-	parser = argparse.ArgumentParser()
-	parser.add_argument("-b", "--base-dir", type=str, help="display a square of a given number", required=True)
-	parser.add_argument("-o", "--output-file", type=str, help="display a square of a given number", required=True)
-	parser.add_argument("-d", "--debug", help="enable debug mode", action="store_true")
-	args = parser.parse_args()
+	def __init__(self):
+		config = Utils.load_config()
+		Utils.register_handlers(config.get("loglevel"), config.get("logpath"))
 
-	base_dir = args.base_dir
-	output_file = args.output_file
+		self.base_dir = ""
+		self.output_file = ""
+		self.repos = []
 
-	if args.debug:
-		print("Debug mode on")
+	def start(self):
+		self.logger.debug('Git Extract Commits started')
 
-	load_repos_from_base_dir()
+		self.check_args()
 
-
-def get_immediate_subdirectories(a_dir):
-	return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]
-
-
-def load_repos_from_base_dir():
-	global base_dir, repos
-
-	folders = get_immediate_subdirectories(base_dir)
-
-	for folder in folders:
-		# check if folder is a git repo
 		try:
-			repo = git.Repo(os.path.join(base_dir, folder))
-			repos.append(repo)
+			self.load_repos_from_base_dir()
+			self.create_output_file()
+		except LoadReposError as e:
+			self.logger.error(f'Failed to load repos: {e}')
+		except CreateOutputFileError as e:
+			self.logger.error(f'Failed to create output file: {e}')
 		except Exception as e:
-			print(f"Folder {folder} is not a repo: {e}")
+			self.logger.error(f"Unexpected error: {e}")
 
-	if len(repos) == 0:
-		print("No git repos found")
-		return
+	def check_args(self):
+		self.logger.debug('Checking arguments')
 
-	create_output_file()
+		parser = argparse.ArgumentParser()
+		parser.add_argument("-b", "--base-dir", type=str, help="display a square of a given number", required=True)
+		parser.add_argument("-o", "--output-file", type=str, help="display a square of a given number", required=True)
+		parser.add_argument("-d", "--debug", help="enable debug mode", action="store_true")
+		args = parser.parse_args()
 
+		self.base_dir = args.base_dir
+		self.output_file = args.output_file
 
-def create_output_file():
-	global output_file
+		if args.debug:
+			print("Debug mode on")
+			Utils.enable_debug_flag()
 
-	with open(output_file, "w") as f:
-		f.write("")
+	def load_repos_from_base_dir(self):
+		self.logger.info(f'Loading repos from base dir: {self.base_dir}')
+		folders = Utils.get_immediate_subdirectories(self.base_dir)
+		self.logger.debug(f'Found sub folders in base dir: {folders}. Loading repos...')
 
+		for folder in folders:
+			# check if folder is a git repo
+			try:
+				repo = git.Repo(os.path.join(self.base_dir, folder))
+				self.repos.append(repo)
+			except Exception as e:
+				self.logger.debug(f'Folder {folder} is not a repo: {e}')
+
+		if len(self.repos) == 0:
+			raise LoadReposError(f'no git repos found in base dir: {self.base_dir}')
+
+	def create_output_file(self):
+		self.logger.info(f'Creating output file: {self.output_file}')
+		try:
+			output_file = open(self.output_file, "w")
+			# write header
+			output_file.write("Zielverzeichnis,Datum,Commit-Hash,Author")
+		except Exception as e:
+			raise CreateOutputFileError(f'unable to write to output file: {e}')
+
+		for repo in self.repos:
+			#if 'master' in repo.branches:
+			#	default_branch = 'master'
+			#elif 'main' in repo.branches:
+			#	default_branch = 'main'
+			try:
+				for commit in repo.iter_commits():
+					print(commit.committed_date)
+					output_file.write(f"{os.path.dirname(self.base_dir)},"
+									  f"{time.strftime('%Y %M %D', time.localtime(commit.committed_date))},"
+									  f"{commit.hexsha},"
+									  f"{commit.committer.name}")
+			except Exception as e:
+				raise CreateOutputFileError(f'unable to parse commits to output file: {e}')
+		output_file.close()
 
 if __name__ == '__main__':
-	start()
+	script = GitExtractCommits()
+	script.start()
+
+class LoadReposError(Exception):
+	pass
+
+class CreateOutputFileError(Exception):
+	pass
