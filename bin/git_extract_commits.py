@@ -78,13 +78,9 @@ class GitExtractCommits:
 			raise CreateOutputFileError(f'unable to write to output file: {e}')
 
 		for repo in self.repos:
-			#if 'master' in repo.branches:
-			#	default_branch = 'master'
-			#elif 'main' in repo.branches:
-			#	default_branch = 'main'
 			try:
 				for commit in repo.iter_commits():
-					output_file.write(f"{os.path.dirname(self.base_dir)},"
+					output_file.write(f"{os.path.dirname(repo)},"
 									  f"{time.strftime('%Y%m%d', time.localtime(commit.committed_date))},"
 									  f"{commit.hexsha},"
 									  f"{commit.committer.name}\n")
