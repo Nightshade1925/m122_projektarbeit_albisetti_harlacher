@@ -43,7 +43,7 @@ https://gitlab.com/Kilian-Epp/m122_luca_kilian Kilian_Epp_Luca_Gygli
 #### Kann-Kriterien
 * Commando-Zeilen Option für Debugging ermöglichen.
 
-### Skript 2: [git_extract_commits.bash](bin/git_extract_commits.bash)
+### Skript 2: [git_extract_commits.bash](bin/git_extract_commits.py)
 
 Die Aufgaben des Skripts sind:
 
