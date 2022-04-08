@@ -3,7 +3,7 @@ import argparse
 import git
 import os
 
-from utils import MakeLoggerClass
+from utils import Utils
 
 base_dir = ""
 output_file = ""
@@ -21,8 +21,12 @@ def start():
 	base_dir = args.base_dir
 	output_file = args.output_file
 
+	config = Utils.load_config()
+	Utils.register_handlers(config.get("loglevel"), config.get("logpath"))
+
 	if args.debug:
 		print("Debug mode on")
+		Utils.enable_debug_flag()
 
 	load_repos_from_base_dir()
 
@@ -59,5 +63,4 @@ def create_output_file():
 
 
 if __name__ == '__main__':
-	MakeLoggerClass.register_handlers()
 	start()

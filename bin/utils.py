@@ -62,5 +62,4 @@ class Utils:
 			c.close()
 			return config
 		except Exception as e:
-			print("Failed to Load configuration file {}: {}".format(filename,e))
-
+			raise Exception("Failed to Load configuration file {}: {}".format(filename,e))
