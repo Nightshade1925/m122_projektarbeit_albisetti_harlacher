@@ -18,17 +18,18 @@ def start():
 	base_dir = args.basedir
 	file = args.file
 	dir_list = os.listdir(base_dir)
-	# print(dir_list)
-	# for dir in dir_list:
-	# 	if check_is_repo(base_dir + "\\" + dir) == True
+	print(dir_list)
 
-
+	for dir in dir_list:
+		if check_is_repo(base_dir + "\\" + dir) == True
+			csv_file = csv.reader(open(file, "r"), delimiter=",")
 
 def read_input_file():
 	with open(file, newline='') as csvfile:
 		spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
 		for row in spamreader:
 			print(row)
+
 
 def check_if_in_use():
 	with open(file, newline='') as csvfile:
