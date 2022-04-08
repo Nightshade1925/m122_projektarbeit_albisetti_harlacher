@@ -1,12 +1,14 @@
 import argparse
 import os
 import csv
+import shutil
 
 import git
 
 base_dir = ""
 file = ""
 dir_list = ""
+is_in_use = False
 
 
 def start():
@@ -17,24 +19,43 @@ def start():
 	args = parser.parse_args()
 	base_dir = args.basedir
 	file = args.file
+	# dirname = os.path.dirname(__file__)
+	# filename = os.path.join(dirname, '../etc/'+file)
 	dir_list = os.listdir(base_dir)
-	print(dir_list)
 
 	for dir in dir_list:
-		if check_is_repo(base_dir + "\\" + dir) == True
-			csv_file = csv.reader(open(file, "r"), delimiter=",")
+		# with open(file, newline='') as csvfile:
+		# 	opened_file = csv.reader(csvfile, delimiter=' ', quotechar=' ')
+		# 	for row in opened_file:
+		# 		print(row[0])
+
+		repo_path = base_dir + "\\" + dir
+		print(repo_path)
+		if check_is_repo(repo_path):
+			print("successfully pulled")
+			# if check_if_in_use(dir, file):
+				# repo = git.Repo(dir)
+				# o = repo.remotes.origin
+				# o.pull()
+
+			# else:
+			# 	shutil.rmtree(base_dir + "\\" + dir)
+			# 	print("removed " + dir)
+		else:
+			print("im not a repo")
+
 
 def read_input_file():
 	with open(file, newline='') as csvfile:
-		spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
-		for row in spamreader:
-			print(row)
+		opened_file = csv.reader(csvfile, delimiter=' ', quotechar='|')
+		for row in opened_file:
+			print(row[1])
 
 
-def check_if_in_use():
+def check_if_in_use(dir, file):
 	with open(file, newline='') as csvfile:
 		reader = csv.reader(csvfile, delimiter=' ')
-		is_in_use = False
+
 		for row in reader:
 			if dir == row[1]:
 				is_in_use = True
@@ -43,9 +64,9 @@ def check_if_in_use():
 
 def check_is_repo(path):
 	try:
-		_ = git.Repo(path).git_dir
+		x = git.Repo(path)
 		return True
-	except git.exc.InvalidGitRepositoryError:
+	except Exception:
 		return False
 
 
