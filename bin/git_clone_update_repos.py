@@ -32,14 +32,14 @@ def start():
 		print(repo_path)
 		if check_is_repo(repo_path):
 			print("successfully pulled")
-			# if check_if_in_use(dir, file):
-				# repo = git.Repo(dir)
-				# o = repo.remotes.origin
-				# o.pull()
+			if check_if_in_use(dir, file):
+				repo = git.Repo(dir)
+				o = repo.remotes.origin
+				o.pull()
 
-			# else:
-			# 	shutil.rmtree(base_dir + "\\" + dir)
-			# 	print("removed " + dir)
+			else:
+				shutil.rmtree(base_dir + "\\" + dir)
+				print("removed " + dir)
 		else:
 			print("im not a repo")
 
