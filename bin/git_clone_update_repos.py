@@ -4,7 +4,6 @@ import csv
 import shutil
 import git
 
-
 base_dir = ""
 file = ""
 dir_list = ""
@@ -39,7 +38,7 @@ def start():
 				o.pull()
 
 			else:
-				shutil.rmtree(base_dir + "/" + dir)
+				# shutil.rmtree(base_dir + "/" + dir)
 				print("removed " + dir)
 		else:
 			print("im not a repo")
@@ -60,6 +59,7 @@ def check_if_in_use(dir, file):
 			if dir == row[1]:
 				is_in_use = True
 				return is_in_use
+			print(row[1])
 
 
 def check_is_repo(path):
