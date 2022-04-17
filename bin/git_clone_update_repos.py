@@ -28,7 +28,7 @@ def start():
 		if check_is_repo(repo_path):
 			print("successfully pulled")
 			if not check_if_in_use(dir, file):
-				# shutil.rmtree(base_dir + "/" + dir)
+				shutil.rmtree(base_dir + "/" + dir)
 				print("removed " + dir)
 		else:
 			print("im not a repo")
