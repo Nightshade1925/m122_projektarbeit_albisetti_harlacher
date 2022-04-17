@@ -45,15 +45,15 @@ def start():
 			print("im not a repo")
 
 
-def read_input_file():
-	with open(file, newline='') as csvfile:
-		opened_file = csv.reader(csvfile, delimiter=' ', quotechar='|')
-		for row in opened_file:
-			print(row[1])
+# def read_input_file():
+# 	with open(file, newline='') as csvfile:
+# 		opened_file = csv.reader(csvfile, delimiter=' ', quotechar='|')
+# 		for row in opened_file:
+# 			print(row[1])
 
 
 def check_if_in_use(dir, file):
-	with open(file, 'wb') as csvfile:
+	with open(file, 'r') as csvfile:
 		reader = csv.reader(csvfile, delimiter=' ')
 
 		for row in reader:
