@@ -2,7 +2,6 @@ import argparse
 import os
 import csv
 import shutil
-
 import git
 
 base_dir = ""
@@ -64,9 +63,9 @@ def check_if_in_use(dir, file):
 
 def check_is_repo(path):
 	try:
-		x = git.Repo(path)
+		x = git.Repo(path).git_dir
 		return True
-	except Exception:
+	except git.exc.InvalidGitRepositoryError:
 		return False
 
 
