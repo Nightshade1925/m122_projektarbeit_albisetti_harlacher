@@ -4,6 +4,7 @@ import csv
 import shutil
 import git
 
+
 base_dir = ""
 file = ""
 dir_list = ""
@@ -52,7 +53,7 @@ def read_input_file():
 
 
 def check_if_in_use(dir, file):
-	with open(file, newline='') as csvfile:
+	with open(file, mode='r', newline='') as csvfile:
 		reader = csv.reader(csvfile, delimiter=' ')
 
 		for row in reader:
