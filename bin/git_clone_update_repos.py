@@ -39,7 +39,7 @@ def start():
 				o.pull()
 
 			else:
-				shutil.rmtree(base_dir + "\\" + dir)
+				shutil.rmtree(base_dir + "/" + dir)
 				print("removed " + dir)
 		else:
 			print("im not a repo")
