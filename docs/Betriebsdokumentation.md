@@ -21,7 +21,7 @@ TODO: Wie sind User-Home-Templates einzurichten
 ....
 
 ## Bediensanleitung Benutzer
-
+Script 1 Aufruf:  python git_clone_update_repos.py -b ~ -f m122_projektarbeit_albisetti_harlacher/etc/input_file.csv
 TODO: Erzeugen der Input-Files beschreiben, falls noetig
 
 TODO: beschreiben des Scriptaufruf
