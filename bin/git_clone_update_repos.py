@@ -53,7 +53,7 @@ def read_input_file():
 
 
 def check_if_in_use(dir, file):
-	with open(file, mode='r', newline='') as csvfile:
+	with open(file, 'wb') as csvfile:
 		reader = csv.reader(csvfile, delimiter=' ')
 
 		for row in reader:
