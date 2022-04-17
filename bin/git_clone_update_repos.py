@@ -28,7 +28,7 @@ def start():
 		# 	for row in opened_file:
 		# 		print(row[0])
 
-		repo_path = base_dir + "\\" + dir
+		repo_path = base_dir + "/" + dir
 		print(repo_path)
 		if check_is_repo(repo_path):
 			print("successfully pulled")
