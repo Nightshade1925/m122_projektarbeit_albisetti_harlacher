@@ -23,21 +23,11 @@ def start():
 	dir_list = os.listdir(base_dir)
 
 	for dir in dir_list:
-		# with open(file, newline='') as csvfile:
-		# 	opened_file = csv.reader(csvfile, delimiter=' ', quotechar=' ')
-		# 	for row in opened_file:
-		# 		print(row[0])
-
 		repo_path = base_dir + "/" + dir
 		print(repo_path)
 		if check_is_repo(repo_path):
 			print("successfully pulled")
-			if check_if_in_use(dir, file):
-				repo = git.Repo(dir)
-				o = repo.remotes.origin
-				o.pull()
-
-			else:
+			if not check_if_in_use(dir, file):
 				# shutil.rmtree(base_dir + "/" + dir)
 				print("removed " + dir)
 		else:
@@ -50,6 +40,9 @@ def start():
 # 		for row in opened_file:
 # 			print(row[1])
 
+# repo = git.Repo(dir)
+# o = repo.remotes.origin
+# o.pull()
 
 def check_if_in_use(dir, file):
 	with open(file, 'r') as csvfile:
