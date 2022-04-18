@@ -39,7 +39,7 @@ def start():
 		reader = csv.reader(csvfile, delimiter=' ')
 
 		for row in reader:
-			if os.path.isdir(row[1]):
+			if os.path.isdir(base_dir+'/'+row[1]):
 				pull_repo(row[1])
 				print('pulled ' + row[1])
 			else:
