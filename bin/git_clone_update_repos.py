@@ -22,6 +22,11 @@ def start():
 	# filename = os.path.join(dirname, '../etc/'+file)
 	dir_list = os.listdir(base_dir)
 
+	# Create the directory for all repos
+	if not os.path.isdir('repos'):
+		path = os.path.join(base_dir, 'repos')
+		os.mkdir(path)
+
 	# process to check if object in directory is a git repo and if it's still in use
 	for dir in dir_list:
 		repo_path = base_dir + "/" + dir
@@ -40,8 +45,8 @@ def start():
 
 		for row in reader:
 			# try:
-			if os.path.isdir(base_dir + '/' + row[1]):
-				pull_repo(base_dir + '/' + row[1])
+			if os.path.isdir('repos/' + row[1]):
+				pull_repo('repos/' + row[1])
 				print('pulled ' + row[1])
 			else:
 				clone_repo(row[0], row[1])
@@ -69,7 +74,7 @@ def check_is_repo(path):
 
 
 def clone_repo(git_url, dirname):
-	repo = git.Repo.clone_from(git_url, base_dir + '/' + dirname)
+	repo = git.Repo.clone_from(git_url, 'repos/' + dirname)
 
 
 def pull_repo(reponame):
