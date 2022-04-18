@@ -43,7 +43,7 @@ def start():
 				pull_repo(row[1])
 				print('pulled ' + row[1])
 			else:
-				clone_repo(row[0])
+				clone_repo(row[0], row[1])
 				print('cloned ' + row[1])
 
 
@@ -65,8 +65,8 @@ def check_is_repo(path):
 		return False
 
 
-def clone_repo(git_url):
-	repo = git.Repo.clone_from(git_url, '~')
+def clone_repo(git_url, dirname):
+	repo = git.Repo.clone_from(git_url, '~/'+dirname)
 
 
 def pull_repo(reponame):
