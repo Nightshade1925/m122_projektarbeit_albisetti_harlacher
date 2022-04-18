@@ -66,7 +66,7 @@ def check_is_repo(path):
 
 
 def clone_repo(git_url):
-	repo = git.Repo.clone_from(git_url)
+	repo = git.Repo.clone_from(git_url, '/~')
 
 
 def pull_repo(reponame):
