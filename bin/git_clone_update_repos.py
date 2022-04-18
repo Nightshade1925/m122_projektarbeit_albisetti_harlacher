@@ -39,15 +39,15 @@ def start():
 		reader = csv.reader(csvfile, delimiter=' ')
 
 		for row in reader:
-			try:
-				if os.path.isdir(base_dir+'/'+row[1]):
-					pull_repo(base_dir+'/'+row[1])
-					print('pulled ' + row[1])
-				else:
-					clone_repo(row[0], row[1])
-					print('cloned ' + row[1])
-			except Exception:
-				print("No Access")
+			# try:
+			if os.path.isdir(base_dir + '/' + row[1]):
+				pull_repo(base_dir + '/' + row[1])
+				print('pulled ' + row[1])
+			else:
+				clone_repo(row[0], row[1])
+				print('cloned ' + row[1])
+	# except Exception:
+	# 	print("No Access")
 
 
 def check_if_in_use(dir, file):
@@ -69,7 +69,7 @@ def check_is_repo(path):
 
 
 def clone_repo(git_url, dirname):
-	repo = git.Repo.clone_from(git_url, base_dir+'/'+dirname)
+	repo = git.Repo.clone_from(git_url, base_dir + '/' + dirname)
 
 
 def pull_repo(reponame):
