@@ -40,7 +40,7 @@ def start():
 
 		for row in reader:
 			if os.path.isdir(base_dir+'/'+row[1]):
-				pull_repo(row[1])
+				pull_repo(base_dir+'/'+row[1])
 				print('pulled ' + row[1])
 			else:
 				clone_repo(row[0], row[1])
