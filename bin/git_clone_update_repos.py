@@ -44,15 +44,15 @@ def start():
 		reader = csv.reader(csvfile, delimiter=' ')
 
 		for row in reader:
-			# try:
-			if os.path.isdir('repos/' + row[1]):
-				pull_repo('repos/' + row[1])
-				print('pulled ' + row[1])
-			else:
-				clone_repo(row[0], row[1])
-				print('cloned ' + row[1])
-	# except Exception:
-	# 	print("No Access")
+			try:
+				if os.path.isdir('repos/' + row[1]):
+					pull_repo('repos/' + row[1])
+					print('pulled ' + row[1])
+				else:
+					clone_repo(row[0], row[1])
+					print('cloned ' + row[1])
+			except Exception:
+				print("Error: No Access")
 
 
 def check_if_in_use(dir, file):
