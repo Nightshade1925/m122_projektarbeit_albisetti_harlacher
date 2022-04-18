@@ -47,7 +47,7 @@ def start():
 					clone_repo(row[0], row[1])
 					print('cloned ' + row[1])
 			except Exception:
-				print("Error")
+				print("No Access")
 
 
 def check_if_in_use(dir, file):
