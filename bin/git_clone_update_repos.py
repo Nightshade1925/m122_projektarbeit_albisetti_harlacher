@@ -22,27 +22,30 @@ def start():
 	# filename = os.path.join(dirname, '../etc/'+file)
 	dir_list = os.listdir(base_dir)
 
+	# process to check if object in directory is a git repo and if it's still in use
 	for dir in dir_list:
 		repo_path = base_dir + "/" + dir
 		print(repo_path)
 		if check_is_repo(repo_path):
-			print("successfully pulled")
+			print("im a repo")
 			if not check_if_in_use(dir, file):
 				shutil.rmtree(base_dir + "/" + dir)
 				print("removed " + dir)
 		else:
-			print("im not a repo")
+			print("im not a repo")  # can be deleted
 
+	# clone / pull process
+	with open(file, 'r') as csvfile:
+		reader = csv.reader(csvfile, delimiter=' ')
 
-# def read_input_file():
-# 	with open(file, newline='') as csvfile:
-# 		opened_file = csv.reader(csvfile, delimiter=' ', quotechar='|')
-# 		for row in opened_file:
-# 			print(row[1])
+		for row in reader:
+			if os.path.isdir(row[1]):
+				pull_repo(row[1])
+				print('pulled ' + row[1])
+			else:
+				clone_repo(row[0])
+				print('cloned ' + row[1])
 
-# repo = git.Repo(dir)
-# o = repo.remotes.origin
-# o.pull()
 
 def check_if_in_use(dir, file):
 	with open(file, 'r') as csvfile:
@@ -52,7 +55,6 @@ def check_if_in_use(dir, file):
 			if dir == row[1]:
 				is_in_use = True
 				return is_in_use
-			print(row[1])
 
 
 def check_is_repo(path):
@@ -65,6 +67,12 @@ def check_is_repo(path):
 
 def clone_repo(git_url):
 	repo = git.Repo.clone_from(git_url)
+
+
+def pull_repo(reponame):
+	repo = git.Repo(reponame)
+	o = repo.remotes.origin
+	o.pull()
 
 
 if __name__ == '__main__':
