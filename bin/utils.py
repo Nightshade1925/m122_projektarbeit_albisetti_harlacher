@@ -40,7 +40,7 @@ class Utils:
 	@staticmethod
 	def register_console_handler() -> logging.StreamHandler:
 		handler = logging.StreamHandler()
-		handler.setLevel("ERROR")
+		handler.setLevel("WARNING")
 		return handler
 
 	@staticmethod
