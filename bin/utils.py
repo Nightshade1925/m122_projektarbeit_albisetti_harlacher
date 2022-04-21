@@ -3,6 +3,7 @@ import json
 import logging
 import logging.handlers
 
+
 class Utils:
 
 	@staticmethod
@@ -62,7 +63,7 @@ class Utils:
 			c.close()
 			return config
 		except Exception as e:
-			raise Exception("Failed to Load configuration file {}: {}".format(filename,e))
+			raise Exception("Failed to Load configuration file {}: {}".format(filename, e))
 
 	@staticmethod
 	def get_immediate_subdirectories(a_dir):
