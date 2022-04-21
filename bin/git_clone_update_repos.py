@@ -6,7 +6,7 @@ import git
 import logging
 from utils import Utils
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('__main__')
 config = Utils.load_config()
 print(config.get("loglevel"))
 print(config.get("logpath"))
