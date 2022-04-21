@@ -7,7 +7,7 @@ import logging.handlers
 class Utils:
 
 	@staticmethod
-	def register_handlers(file_log_level, log_path) -> None:
+	def register_handlers(file_log_level, log_path):
 		"""
 		Register all log handlers
 
