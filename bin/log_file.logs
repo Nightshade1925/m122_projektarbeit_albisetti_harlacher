@@ -1,0 +1,56 @@
+2022-04-21 19:20:02,545 __main__ INFO     pulled m122_projektarbeit_albisetti_harlacher
+2022-04-21 19:20:03,074 __main__ WARNING  Couldn't clone git@github.com:dmtbz/m122_mitrovic_mohammed.git
+2022-04-21 19:20:04,969 __main__ INFO     pulled Henry_Irving_Justin_Feliz
+2022-04-21 19:20:09,402 __main__ WARNING  Couldn't clone https://gitlab.com/Kilian-Epp/m122_luca_kilian
+2022-04-21 19:20:10,085 __main__ INFO     pulled Architektur
+2022-04-21 19:20:10,089 git.cmd INFO     Ignored error after process had died: OSError(9, 'Das Handle ist ungültig', None, 6, None)
+2022-04-21 19:20:10,090 git.cmd INFO     Ignored error after process had died: OSError(9, 'Das Handle ist ungültig', None, 6, None)
+2022-04-21 19:20:14,282 __main__ INFO     pulled m122_projektarbeit_albisetti_harlacher
+2022-04-21 19:20:14,794 __main__ WARNING  Couldn't clone git@github.com:dmtbz/m122_mitrovic_mohammed.git
+2022-04-21 19:20:17,098 __main__ INFO     pulled Henry_Irving_Justin_Feliz
+2022-04-21 19:20:20,559 __main__ WARNING  Couldn't clone https://gitlab.com/Kilian-Epp/m122_luca_kilian
+2022-04-21 19:20:21,179 __main__ INFO     pulled Architektur
+2022-04-21 19:21:09,124 __main__ INFO     pulled m122_projektarbeit_albisetti_harlacher
+2022-04-21 19:21:09,637 __main__ WARNING  Couldn't clone git@github.com:dmtbz/m122_mitrovic_mohammed.git
+2022-04-21 19:21:11,563 __main__ INFO     pulled Henry_Irving_Justin_Feliz
+2022-04-21 19:21:12,262 __main__ INFO     pulled Architektur
+2022-04-21 19:23:56,035 __main__ INFO     pulled m122_projektarbeit_albisetti_harlacher
+2022-04-21 19:24:00,634 __main__ WARNING  Couldn't clone https://gitlab.com/Kilian-Epp/m122_luca_kilian
+2022-04-21 19:24:01,302 __main__ INFO     pulled Architektur
+2022-04-21 19:25:14,248 __main__ WARNING  No permission to delete Architektur
+2022-04-21 19:25:14,835 __main__ INFO     pulled m122_projektarbeit_albisetti_harlacher
+2022-04-21 19:25:15,325 __main__ WARNING  Couldn't clone git@github.com:dmtbz/m122_mitrovic_mohammed.git
+2022-04-21 19:25:15,326 __main__ WARNING  Couldn't pull git@gitlab.com:henry.irving2001/m122_praxisarbeit.git
+2022-04-21 19:25:23,562 __main__ WARNING  Couldn't clone https://gitlab.com/Kilian-Epp/m122_luca_kilian
+2022-04-21 19:28:54,232 __main__ INFO     pulled m122_projektarbeit_albisetti_harlacher
+2022-04-21 19:28:54,731 __main__ WARNING  Couldn't clone git@github.com:dmtbz/m122_mitrovic_mohammed.git
+2022-04-21 19:28:54,733 __main__ WARNING  Couldn't pull git@gitlab.com:henry.irving2001/m122_praxisarbeit.git
+2022-04-21 19:28:58,524 __main__ WARNING  Couldn't clone https://gitlab.com/Kilian-Epp/m122_luca_kilian
+2022-04-21 19:29:56,329 __main__ INFO     pulled m122_projektarbeit_albisetti_harlacher
+2022-04-21 19:29:56,844 __main__ WARNING  Couldn't clone git@github.com:dmtbz/m122_mitrovic_mohammed.git
+2022-04-21 19:29:56,847 __main__ WARNING  Couldn't pull git@gitlab.com:henry.irving2001/m122_praxisarbeit.git
+2022-04-21 19:30:01,014 __main__ WARNING  Couldn't clone https://gitlab.com/Kilian-Epp/m122_luca_kilian
+2022-04-21 19:30:01,016 __main__ WARNING  Couldn't pull https://github.com/Nightshade1925/Architektur.git
+2022-04-21 19:30:36,743 __main__ INFO     pulled m122_projektarbeit_albisetti_harlacher
+2022-04-21 19:30:37,234 __main__ WARNING  Couldn't clone git@github.com:dmtbz/m122_mitrovic_mohammed.git
+2022-04-21 19:32:34,835 __main__ INFO     pulled m122_projektarbeit_albisetti_harlacher
+2022-04-21 19:32:35,359 __main__ WARNING  Couldn't clone git@github.com:dmtbz/m122_mitrovic_mohammed.git
+2022-04-21 19:33:57,965 __main__ INFO     pulled m122_projektarbeit_albisetti_harlacher
+2022-04-21 19:33:58,475 __main__ WARNING  Couldn't clone git@github.com:dmtbz/m122_mitrovic_mohammed.git
+2022-04-21 19:35:57,299 __main__ INFO     pulled m122_projektarbeit_albisetti_harlacher
+2022-04-21 19:35:57,832 __main__ WARNING  Couldn't clone git@github.com:dmtbz/m122_mitrovic_mohammed.git
+2022-04-21 19:38:12,415 __main__ WARNING  Couldn't pull https://github.com/Nightshade1925/m122_projektarbeit_albisetti_harlacher.git
+2022-04-21 19:38:12,950 __main__ WARNING  Couldn't clone git@github.com:dmtbz/m122_mitrovic_mohammed.git
+2022-04-21 19:38:12,951 __main__ WARNING  Couldn't pull git@gitlab.com:henry.irving2001/m122_praxisarbeit.git
+2022-04-21 19:38:17,474 __main__ WARNING  Couldn't clone https://gitlab.com/Kilian-Epp/m122_luca_kilian
+2022-04-21 19:38:17,475 __main__ WARNING  Couldn't pull https://github.com/Nightshade1925/Architektur.git
+2022-04-21 19:38:56,935 __main__ INFO     cloned m122_projektarbeit_albisetti_harlacher
+2022-04-21 19:38:57,456 __main__ WARNING  Couldn't clone git@github.com:dmtbz/m122_mitrovic_mohammed.git
+2022-04-21 19:38:59,907 __main__ INFO     cloned Henry_Irving_Justin_Feliz
+2022-04-21 19:39:04,325 __main__ WARNING  Couldn't clone https://gitlab.com/Kilian-Epp/m122_luca_kilian
+2022-04-21 19:39:05,113 __main__ INFO     cloned Architektur
+2022-04-21 19:39:35,854 __main__ WARNING  Couldn't pull https://github.com/Nightshade1925/m122_projektarbeit_albisetti_harlacher.git
+2022-04-21 19:39:36,374 __main__ WARNING  Couldn't clone git@github.com:dmtbz/m122_mitrovic_mohammed.git
+2022-04-21 19:39:36,375 __main__ WARNING  Couldn't pull git@gitlab.com:henry.irving2001/m122_praxisarbeit.git
+2022-04-21 19:39:41,426 __main__ WARNING  Couldn't clone https://gitlab.com/Kilian-Epp/m122_luca_kilian
+2022-04-21 19:39:41,427 __main__ WARNING  Couldn't pull https://github.com/Nightshade1925/Architektur.git

@@ -42,8 +42,11 @@ def start():
 		if check_is_repo(repo_path):
 			logger.debug("im a repo")
 			if not check_if_in_use(dir, file):
-				shutil.rmtree(base_dir + "/" + dir)
-				logger.info("removed " + dir)
+				try:
+					shutil.rmtree(base_dir + "/repos/" + dir)
+					logger.info("removed " + dir)
+				except Exception:
+					logger.warning("No permission to delete " + dir)
 		else:
 			logger.debug("im not a repo")  # can be deleted
 
@@ -54,7 +57,7 @@ def start():
 		for row in reader:
 			if os.path.isdir(base_dir + '/repos/' + row[1]):
 				try:
-					os.chdir(base_dir + '/repos/')
+					os.chdir(base_dir + '/repos/'+row[1])
 					pull_repo(row[1])
 					logger.info('pulled ' + row[1])
 				except Exception:
@@ -63,6 +66,7 @@ def start():
 				try:
 					os.chdir(base_dir + '/repos/')
 					clone_repo(row[0], row[1])
+					print('cloned '+ row[1])
 					logger.info('cloned ' + row[1])
 				except Exception:
 					logger.warning("Couldn't clone " + row[0])
