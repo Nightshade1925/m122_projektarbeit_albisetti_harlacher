@@ -57,8 +57,9 @@ def start():
 		for row in reader:
 			if os.path.isdir(base_dir + '/repos/' + row[1]):
 				try:
-					os.chdir(base_dir + '/repos/'+row[1])
+					os.chdir(base_dir + '/repos/')
 					pull_repo(row[1])
+					print('pulled ' + row[1])
 					logger.info('pulled ' + row[1])
 				except Exception:
 					logger.warning("Couldn't pull " + row[0])
@@ -66,7 +67,7 @@ def start():
 				try:
 					os.chdir(base_dir + '/repos/')
 					clone_repo(row[0], row[1])
-					print('cloned '+ row[1])
+					print('cloned '+row[1])
 					logger.info('cloned ' + row[1])
 				except Exception:
 					logger.warning("Couldn't clone " + row[0])
