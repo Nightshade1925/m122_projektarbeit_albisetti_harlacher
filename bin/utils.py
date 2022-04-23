@@ -7,12 +7,12 @@ import logging.handlers
 class Utils:
 
 	@staticmethod
-	def register_handlers(file_log_level: str, log_path: str) -> None:
+	def register_handlers(file_log_level, log_path) -> None:
 		"""
 		Register all log handlers
 
 		Register a file handler for the application as a default logger with settings form the configuration\
-		Register a console handler. Default is on ERROR level.
+		Register a console handler. Default loglevel is INFO.
 
 		:return:
 		"""
@@ -24,14 +24,14 @@ class Utils:
 		logging.getLogger().addHandler(file_handler)
 
 		# Create Console Handler
-		# Console handler logs on ERROR as default
+		# Console handler logs on INFO as default
 		console_handler = Utils.register_console_handler()
 		logging.getLogger().addHandler(console_handler)
 
 	@staticmethod
-	def register_file_handler(log_path: str, file_log_level: str) -> logging.FileHandler:
+	def register_file_handler(log_path, file_log_level) -> logging.FileHandler:
 		formatter = logging.Formatter('{asctime} {name} {levelname:8s} {message}', style='{')
-		handler = logging.handlers.RotatingFileHandler(filename='log_file.logs',
+		handler = logging.handlers.RotatingFileHandler(filename=log_path,
 													   backupCount=15,
 													   maxBytes=10000)  # 10kb
 		handler.setFormatter(formatter)
@@ -41,7 +41,7 @@ class Utils:
 	@staticmethod
 	def register_console_handler() -> logging.StreamHandler:
 		handler = logging.StreamHandler()
-		handler.setLevel("WARNING")
+		handler.setLevel("INFO")
 		return handler
 
 	@staticmethod

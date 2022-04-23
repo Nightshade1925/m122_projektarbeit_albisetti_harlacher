@@ -1,4 +1,4 @@
 {
   "loglevel": "INFO",
-  "logpath ": "lb02.log"
+  "logpath": "log_file.log"
 }
