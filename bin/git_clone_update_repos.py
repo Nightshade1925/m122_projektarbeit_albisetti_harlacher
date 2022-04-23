@@ -43,6 +43,7 @@ def start():
 			logger.debug("im a repo")
 			if not check_if_in_use(dir, file):
 				try:
+					print("b4 delete")
 					shutil.rmtree(base_dir + "/" + dir)
 					logger.info("removed " + dir)
 				except Exception:
