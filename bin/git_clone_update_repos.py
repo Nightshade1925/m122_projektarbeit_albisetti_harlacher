@@ -41,7 +41,8 @@ def start():
 		logger.debug(repo_path)
 		if check_is_repo(repo_path):
 			logger.info("im a repo")
-			if not check_if_in_use(dir, file):
+			in_use = check_if_in_use(dir, file)
+			if not in_use:
 				try:
 					print("b4 delete")
 					shutil.rmtree(base_dir + "/" + dir)
