@@ -52,7 +52,7 @@ def start():
 				print("test")
 		else:
 			logger.debug("im not a repo")  # can be deleted
-
+	logger.info("done")
 	# clone / pull process
 	with open(file, 'r') as csvfile:
 		reader = csv.reader(csvfile, delimiter=' ')
