@@ -54,24 +54,24 @@ def start():
 			logger.debug("im not a repo")  # can be deleted
 
 	# clone / pull process
-	with open(file, 'r') as csvfile:
-		reader = csv.reader(csvfile, delimiter=' ')
-
-		for row in reader:
-			if os.path.isdir(base_dir + '/' + row[1]):
-				try:
-					os.chdir(base_dir)
-					pull_repo(row[1])
-					logger.info('pulled ' + row[1])
-				except Exception:
-					logger.warning("Couldn't pull " + row[0])
-			else:
-				try:
-					os.chdir(base_dir)
-					clone_repo(row[0], row[1])
-					logger.info('cloned ' + row[1])
-				except Exception:
-					logger.warning("Couldn't clone " + row[0])
+	# with open(file, 'r') as csvfile:
+	# 	reader = csv.reader(csvfile, delimiter=' ')
+	#
+	# 	for row in reader:
+	# 		if os.path.isdir(base_dir + '/' + row[1]):
+	# 			try:
+	# 				os.chdir(base_dir)
+	# 				pull_repo(row[1])
+	# 				logger.info('pulled ' + row[1])
+	# 			except Exception:
+	# 				logger.warning("Couldn't pull " + row[0])
+	# 		else:
+	# 			try:
+	# 				os.chdir(base_dir)
+	# 				clone_repo(row[0], row[1])
+	# 				logger.info('cloned ' + row[1])
+	# 			except Exception:
+	# 				logger.warning("Couldn't clone " + row[0])
 
 
 def check_if_in_use(dir, file):
