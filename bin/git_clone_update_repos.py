@@ -49,10 +49,10 @@ def start():
 				except Exception:
 					logger.warning("No permission to delete " + dir)
 			else:
-				print("test")
+				logger.info("test")
 		else:
 			logger.debug("im not a repo")  # can be deleted
-	logger.info("done")
+
 	# clone / pull process
 	with open(file, 'r') as csvfile:
 		reader = csv.reader(csvfile, delimiter=' ')
