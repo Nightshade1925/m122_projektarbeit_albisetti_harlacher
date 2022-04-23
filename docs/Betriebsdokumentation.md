@@ -20,7 +20,7 @@ python3 --version
 Beide Skripts verwenden die Python Library gitpython. Sie kann mit dem folgenden Befehlen installiert werden:
 ```
 sudo apt install python3-pip
-pip3 install gitpython (check this one here pls Paul from futere)
+pip3 install gitpython
 ```
 
 Beide Skripts befinden sich in diesem Git Repository. Desswegen ist es Empfolen diese Repository zu klonen:
@@ -85,7 +85,8 @@ Wie bereits in der Installation beschrieben spielt es keine Rolle von wo die Skr
 ../etc/config.json
 ```
 Ebenfalls muss das utils.py File im selben Ordner sein wie die Skripts.
-
+\n
+\n
 Die Details zum Skriptaufruf können von beiden Skirpts mit folgendem Befehl eingesehen werden:
 ```
 python3 pathToTheSkript.py -h
@@ -99,11 +100,12 @@ Aufruf:
 ```
 git_extract_commits.py [-d] -b BASE_DIR -o OUTPUT_FILE
 ```
-Das BASE_DIR ist der Ordner welcher die Git Repos beinhaltet von welchen man die Git Commits ins Output File herausschreiben möchte.
-Das OUTPUT_FILE beschreibt der Pfad wohin das Output File geschrieben werden soll.
+Das BASE_DIR ist der Ordner welcher die Git Repos beinhaltet von welchen man die Git Commits ins Output File herausschreiben möchte.\
+Das OUTPUT_FILE beschreibt der Pfad wohin das Output File geschrieben werden soll.\
 Mit dem Flag -d kann der Debug Modus aktiviert werden. Damit werden Informationen auf dem DEBUG Level sowohl in die Konsole wie auch ins Logfile geschrieben.
 
 TODO: beschreiben der erzeugt files (falls solche erzeugt werden)
 
-TODO: Lokation von logfiles und bekannte Fehlermeldungen beschreiben.
 
+TODO: Lokation von logfiles und bekannte Fehlermeldungen beschreiben.
+Wo die Logs sich befinden muss man selber in der Konfiguration definieren.
