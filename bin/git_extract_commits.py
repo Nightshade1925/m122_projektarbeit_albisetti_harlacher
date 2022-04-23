@@ -83,19 +83,20 @@ def create_output_file():
 		raise CreateOutputFileError(f'unable to write to output file: {e}')
 
 	for repo in repos:
-		logger.debug(f"Extracting commits from repo: {repo.working_tree_dir}")
+		repo_dir_name = os.path.dirname(repo.working_tree_dir)
+		logger.debug(f"Extracting commits from repo: {repo_dir_name}")
 		try:
 			for commit in repo.iter_commits():
 				# parse commits in format:
 				# name of repo, date, commit hash, author
-				output_file.write(f"{repo.working_tree_dir},"
+				output_file.write(f"{repo_dir_name},"
 								  f"{time.strftime('%Y%m%d', time.localtime(commit.committed_date))},"
 								  f"{commit.hexsha},"
 								  f"{commit.committer.name}\n")
 		except Exception as e:
 			output_file.close()
-			raise CreateOutputFileError(f'unable to parse commits to output file for repo {repo.working_tree_dir}: {e}')
-		logger.debug(f"Finished extracting commits from repo: {repo.working_tree_dir}")
+			raise CreateOutputFileError(f'unable to parse commits to output file for repo {repo_dir_name}: {e}')
+		logger.debug(f"Finished extracting commits from repo: {repo_dir_name}")
 	output_file.close()
 
 
