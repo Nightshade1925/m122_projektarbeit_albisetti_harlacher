@@ -33,6 +33,8 @@ def start():
 	# if not os.path.isdir(base_dir + '/repos'):
 	# 	path = os.path.join(base_dir, 'repos')
 	# 	os.mkdir(path)
+
+	# get a list of directory
 	dir_list = os.listdir(base_dir)
 
 	# process to check if object in directory is a git repo and if it's still in use
@@ -40,7 +42,7 @@ def start():
 		repo_path = base_dir + '/' + dir
 		logger.debug(repo_path)
 		if check_is_repo(repo_path):
-			logger.info("im a repo")
+			logger.debug("im a repo")
 			in_use = check_if_in_use(dir, file)
 			if not in_use:
 				try:
@@ -49,7 +51,7 @@ def start():
 				except Exception:
 					logger.warning("No permission to delete " + dir)
 		else:
-			logger.debug("im not a repo")  # can be deleted
+			logger.debug("im not a repo")
 
 	# clone / pull process
 	with open(file, 'r') as csvfile:
@@ -75,7 +77,6 @@ def start():
 def check_if_in_use(dir, file):
 	with open(file, 'r') as csvfile:
 		reader = csv.reader(csvfile, delimiter=' ')
-		logger.info("Test")
 		for row in reader:
 			if dir == row[1]:
 				return True
