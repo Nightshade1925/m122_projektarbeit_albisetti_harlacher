@@ -40,7 +40,7 @@ def start():
 		repo_path = base_dir + '/' + dir
 		logger.debug(repo_path)
 		if check_is_repo(repo_path):
-			logger.debug("im a repo")
+			logger.info("im a repo")
 			if not check_if_in_use(dir, file):
 				try:
 					print("b4 delete")
