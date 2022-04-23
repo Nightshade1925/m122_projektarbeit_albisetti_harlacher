@@ -33,7 +33,7 @@ def start():
 	# if not os.path.isdir(base_dir + '/repos'):
 	# 	path = os.path.join(base_dir, 'repos')
 	# 	os.mkdir(path)
-	# dir_list = os.listdir(base_dir + '/repos')
+	dir_list = os.listdir(base_dir)
 
 	# process to check if object in directory is a git repo and if it's still in use
 	for dir in dir_list:
@@ -44,35 +44,32 @@ def start():
 			in_use = check_if_in_use(dir, file)
 			if not in_use:
 				try:
-					print("b4 delete")
 					shutil.rmtree(base_dir + "/" + dir)
 					logger.info("removed " + dir)
 				except Exception:
 					logger.warning("No permission to delete " + dir)
-			else:
-				logger.info("test")
 		else:
 			logger.debug("im not a repo")  # can be deleted
 
 	# clone / pull process
-	# with open(file, 'r') as csvfile:
-	# 	reader = csv.reader(csvfile, delimiter=' ')
-	#
-	# 	for row in reader:
-	# 		if os.path.isdir(base_dir + '/' + row[1]):
-	# 			try:
-	# 				os.chdir(base_dir)
-	# 				pull_repo(row[1])
-	# 				logger.info('pulled ' + row[1])
-	# 			except Exception:
-	# 				logger.warning("Couldn't pull " + row[0])
-	# 		else:
-	# 			try:
-	# 				os.chdir(base_dir)
-	# 				clone_repo(row[0], row[1])
-	# 				logger.info('cloned ' + row[1])
-	# 			except Exception:
-	# 				logger.warning("Couldn't clone " + row[0])
+	with open(file, 'r') as csvfile:
+		reader = csv.reader(csvfile, delimiter=' ')
+
+		for row in reader:
+			if os.path.isdir(base_dir + '/' + row[1]):
+				try:
+					os.chdir(base_dir)
+					pull_repo(row[1])
+					logger.info('pulled ' + row[1])
+				except Exception:
+					logger.warning("Couldn't pull " + row[0])
+			else:
+				try:
+					os.chdir(base_dir)
+					clone_repo(row[0], row[1])
+					logger.info('cloned ' + row[1])
+				except Exception:
+					logger.warning("Couldn't clone " + row[0])
 
 
 def check_if_in_use(dir, file):
