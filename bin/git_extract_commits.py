@@ -83,7 +83,7 @@ def create_output_file():
 		raise CreateOutputFileError(f'unable to write to output file: {e}')
 
 	for repo in repos:
-		repo_dir_name = os.path.dirname(repo.working_tree_dir)
+		repo_dir_name = os.path.basename(repo.working_tree_dir)
 		logger.debug(f"Extracting commits from repo: {repo_dir_name}")
 		try:
 			for commit in repo.iter_commits():
