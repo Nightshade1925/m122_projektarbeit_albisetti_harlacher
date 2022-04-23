@@ -78,7 +78,7 @@ def start():
 def check_if_in_use(dir, file):
 	with open(file, 'r') as csvfile:
 		reader = csv.reader(csvfile, delimiter=' ')
-
+		logger.info("Test")
 		for row in reader:
 			if dir == row[1]:
 				return True
