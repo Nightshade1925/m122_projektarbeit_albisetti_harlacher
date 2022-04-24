@@ -126,5 +126,5 @@ Name des Verzeichnis,Datum im Format YYYYmmdd (wobei YYYY=Jahr, mm=Monat, dd=Tag
 Hier ein Beispiel:\
 ![grafik](https://user-images.githubusercontent.com/69149487/164976802-057dedd5-4361-478f-96e8-b1c8fba623a7.png)
 
-TODO: Lokation von logfiles und bekannte Fehlermeldungen beschreiben.
+TODO: Lokation von logfiles und bekannte Fehlermeldungen beschreiben.\
 Wo die Logs sich befinden muss man selber in der Konfiguration definieren.
