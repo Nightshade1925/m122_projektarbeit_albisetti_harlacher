@@ -48,8 +48,8 @@ Beispielkonfiguration:
   "logpath": "log_file.log"
 }
 ```
-Da keine spezielle Konfiguration notwendig ist für die Ausführung der Skripts wird nur das Logging zum Logfile konfiguriert.
-Das Loglevel kann DEBUG, INFO, WARNING, ERROR oder CRITICAL sein. Es definiert welche wichtigkeit von Logs in das Logfile geloggt werden.
+Da keine spezielle Konfiguration notwendig ist für die Ausführung der Skripts wird nur das Logging zum Logfile konfiguriert.\
+Das Loglevel kann DEBUG, INFO, WARNING, ERROR oder CRITICAL sein. Es definiert welche wichtigkeit von Logs in das Logfile geloggt werden.\
 (Note: Wenn der Debug Flag bei der Ausführung des Skripts gesetzt ist, wird das Loglevel zu DEBUG überschrieben)
 
 Logpath ist der Pfad zum Logfile. 
@@ -123,7 +123,7 @@ Jede weitere Zeile im Output File ist ein Commit aus einem Repo. Die Zeilen habe
 ```
 Name des Verzeichnis,Datum im Format YYYYmmdd (wobei YYYY=Jahr, mm=Monat, dd=Tag), Commit-Hash , Name des Commiters
 ```
-Hier ein Beispiel:
+Hier ein Beispiel:\
 ![grafik](https://user-images.githubusercontent.com/69149487/164976802-057dedd5-4361-478f-96e8-b1c8fba623a7.png)
 
 TODO: Lokation von logfiles und bekannte Fehlermeldungen beschreiben.
