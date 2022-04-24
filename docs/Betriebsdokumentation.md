@@ -71,8 +71,11 @@ TODO: Erzeugen der Input-Files beschreiben, falls noetig
 #### Skript 1
 Skript 1 benötigt ein CSV Datei als Input file. Das CSV Dateil sollte folgedes Format haben:
 ![image](https://user-images.githubusercontent.com/71868338/164968295-378bc71b-f1f4-401e-96dc-90e211246eb4.png)
-Spalte 1: GitUrl
+
+Spalte 1: GitUrl  
 Spalte 2 SpeicherZiel
+
+WICHTIG: Zwischen den beiden Spalten muss es ein Abstand haben als Spaltentrennung.
 
 #### Skript 2
 Das Skript 2 braucht zwar kein Input files, jedoch bracht es logischerweise Git Repos um Commits daraus zu extrahieren. Dazu können selber welche geklont werden mit:
@@ -98,8 +101,8 @@ python3 pathToTheSkript.py -h
 #### Skript 1
 Aufruf:          
 ```
-Bsp:              sudo python3 git_clone_update_repos.py -b home/vagrant -f m122_projektarbeit_albisetti_harlacher/etc/input_file.csv
-                  sudo python3 PfadZumScript -b BaseDirectory -f PfadZumInputFile (CSV Datei)
+Bsp:              sudo python3 git_clone_update_repos.py -b /home/vagrant -f m122_projektarbeit_albisetti_harlacher/etc/input_file.csv
+                  sudo python3 PfadZumScript -b PfadZumZielOrt -f PfadZumInputFile (CSV Datei)
 ```
 
 Nachdem der Script aufgerufen wurde, werden alle erfolgreich clonnte Repos in der Base directory stehen. Ebenfalls wird ein log file erstellt, wo der Benutzer den Skript aufgerufen hat. Falls es im Base directory bereits Repositories hat und diese nicht im Input file stehen, gelten diese als nicht benutzt und werden beim Skriptaufruf gelöscht.
