@@ -4,14 +4,14 @@
 
 TODO: In 2-3 Sätzen beschreiben was die Skripte grundsaetzlich tun.
 
+Das  Skript 1 klont alle GIT-Repos mit GIT-Kommandos und speichert sie in einem Verzeichnis. Das Skript 2 liest von allen GIT-Repos in diesem Verzeichnis alle Commits aus und speichert diese in einem File mit einem bestimtmen Format.\
+In einen nächsten Schritt wird das Output File mit einen zu Verfügung gestelltem Skript visualisert.
+
 ## Installationsanleitung für Administratoren
-
 ### Installation
-TODO: Wie ist das skript zu installieren. (z.B. apt-get install ... oder tar xvf .... oder ...)
-
 #### Requirements
-Ubuntu Server installation (18.4 oder 20.4)
-Überprüfen das Python 3 installiert ist.
+1. Ubuntu Server installation (18.4 oder 20.4).
+2. Überprüfen das Python 3 installiert ist.
 ```
 python3 --version
 ```
@@ -23,28 +23,22 @@ sudo apt install python3-pip
 pip3 install gitpython
 ```
 
-Beide Skripts befinden sich in diesem Git Repository. Desswegen ist es Empfolen diese Repository zu klonen:
+Beide Skripts befinden sich in diesem Git Repository. Desswegen ist es empfolen das gesamte Repository zu klonen:
 ```
 git clone https://github.com/Nightshade1925/m122_projektarbeit_albisetti_harlacher.git
 ```
-Die beiden Skripts befinden sich im ordner bin (m122_projektarbeit_albisetti_harlacher/bin)
+Die beiden Skripts befinden sich im Ordner bin (m122_projektarbeit_albisetti_harlacher/bin).
 
-WICHTIG: Die erfolgreiche Ausführung der Skirpts erfordert den zugriff auf das Konfigurationsfile config.json mit dieser Referenz:
+WICHTIG: Die erfolgreiche Ausführung der Skripts erfordert den Zugriff auf das Konfigurationsfile config.json mit dieser Referenz:
 ```
 ../etc/config.json
 ```
-Ebenfalls muss das utils.py File im selben ordner sein wie die beiden Skripts.
+Ebenfalls muss das utils.py File im selben Ordner sein wie die beiden Skripts.
 Ansonstens spielt es keine Rolle wo die Skirpts installiert werden.
 
-#### Skript 1
-i think nothing (check this bob)
-
-#### Skript 2 
-i think nothing (check this one here pls Paul from futere)
-
+Es gibt keine Skriptspezifische installationen. Beide Skripts funktionieren nach der oben beschriebenen Installation.
 
 ### Konfiguration
-
 TODO: Beschreibung der Konfigurationsfiles (Beispiel-Files erstellen im Repo)
 Das Konfigurationsfile ist config.json und wird von beiden Skripts verwendet.\
 Beispielkonfiguration:
@@ -54,18 +48,16 @@ Beispielkonfiguration:
   "logpath": "log_file.log"
 }
 ```
-Da keine spezielle Konfiguration notwendig ist für die Ausführung der Skripts wird nur das Logging zun Logfile konfiguriert.
+Da keine spezielle Konfiguration notwendig ist für die Ausführung der Skripts wird nur das Logging zum Logfile konfiguriert.
 Das Loglevel kann DEBUG, INFO, WARNING, ERROR oder CRITICAL sein. Es definiert welche wichtigkeit von Logs in das Logfile geloggt werden.
 (Note: Wenn der Debug Flag bei der Ausführung des Skripts gesetzt ist, wird das Loglevel zu DEBUG überschrieben)
 
 Logpath ist der Pfad zum Logfile. 
 
 TODO: Wie ist ein allfaelliger Cronjob einzurichten TODO: Wie sind User-Home-Templates einzurichten
-Abgesehne von der Installation und der Konfiguration des config.json File braucht es keine weitere Konfiguraitionene
-
+Abgesehne von der Installation und der Konfiguration des config.json File muss man nichts weiteres einrichten.
 
 ## Bediensanleitung Benutzer
-
 TODO: Erzeugen der Input-Files beschreiben, falls noetig
 ### Erzeugen von Input-Files
 #### Skript 1
@@ -117,7 +109,22 @@ Das OUTPUT_FILE beschreibt der Pfad wohin das Output File geschrieben werden sol
 Mit dem Flag -d kann der Debug Modus aktiviert werden. Damit werden Informationen auf dem DEBUG Level sowohl in die Konsole wie auch ins Logfile geschrieben.
 
 TODO: beschreiben der erzeugt files (falls solche erzeugt werden)
+### Skript Output
+#### Skript 1
+Some folders (bob)      
 
+#### Skript 2
+Das Skript 2 produziert ein Output File (an einer bestimmten Position welche beim Aufruf vom Skript definiert wird). Dieses Output File wird in einen nächsten Schritt mit einem weiteren Skript grafisch dargestellt.\
+Das Output File ist im CSV Syntax. Es beginnt immer mit dem Titel:
+```
+Zielverzeichnis,Datum,Commit-Hash,Author
+```
+Jede weitere Zeile im Output File ist ein Commit aus einem Repo. Die Zeilen haben folgenden Syntax:
+```
+Name des Verzeichnis,Datum im Format YYYYmmdd (wobei YYYY=Jahr, mm=Monat, dd=Tag), Commit-Hash , Name des Commiters
+```
+Hier ein Beispiel:
+![grafik](https://user-images.githubusercontent.com/69149487/164976802-057dedd5-4361-478f-96e8-b1c8fba623a7.png)
 
 TODO: Lokation von logfiles und bekannte Fehlermeldungen beschreiben.
 Wo die Logs sich befinden muss man selber in der Konfiguration definieren.
