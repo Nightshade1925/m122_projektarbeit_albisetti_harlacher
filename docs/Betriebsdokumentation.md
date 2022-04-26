@@ -79,38 +79,34 @@ Nachdem der Script aufgerufen wurde, werden alle erfolgreich clonnte Repos in de
 ---
 
 ### Skript 2
-Das Skript 2 braucht zwar kein Input files, jedoch bracht es logischerweise Git Repos um Commits daraus zu extrahieren. Dazu können selber welche geklont werden mit:
+#### Voraussetzung
+Das Skript 2 braucht zwar keine Input Files, jedoch bracht es Git Repos um Commits daraus zu extrahieren. Dazu können selber welche geklont werden mit:
 ```
 git clone [url]
 ```
-oder man verwendet das Skript 1 um die Git Repos zu klonen.
+oder man verwendet das Skript 1 um dies zu machen
 
-TODO: beschreiben des Scriptaufruf
-### Skriptaufruf
 Wie bereits in der Installation beschrieben spielt es keine Rolle von wo die Skripts ausgeführt werden oder wo sie installiert wurden, sollange das Konfigurationsfile (config.json) folgenderweise referenziert werden kann 
 ```
 ../etc/config.json
 ```
 Ebenfalls muss das utils.py File im selben Ordner sein wie die Skripts.
-\n
-\n
-Die Details zum Skriptaufruf können von beiden Skirpts mit folgendem Befehl eingesehen werden:
+#### Skriptaufruf
+Die Details zum Skriptaufruf können mit folgendem Befehl eingesehen werden:
 ```
-python3 pathToTheSkript.py -h
+python3 path/to/script/git_extract_commits.py -h
 ```
-
-Aufruf:
+Der Befehl gibt das hier zurück:
 ```
 git_extract_commits.py [-d] -b BASE_DIR -o OUTPUT_FILE
 ```
 Das BASE_DIR ist der Ordner welcher die Git Repos beinhaltet von welchen man die Git Commits ins Output File herausschreiben möchte.\
-Das OUTPUT_FILE beschreibt der Pfad wohin das Output File geschrieben werden soll.\
+Das OUTPUT_FILE beschreibt der Pfad wohin das Output File geschrieben werden soll. 
+Note: Wenn berechtigungen fehlen oder OUTPUT_FILE ein Directory ist wird das Skript mit einem Fehler enden.\
 Mit dem Flag -d kann der Debug Modus aktiviert werden. Damit werden Informationen auf dem DEBUG Level sowohl in die Konsole wie auch ins Logfile geschrieben.
 
-
-### Output
-
-Das Skript 2 produziert ein Output File (an einer bestimmten Position welche beim Aufruf vom Skript definiert wird). Dieses Output File wird in einen nächsten Schritt mit einem weiteren Skript grafisch dargestellt.\
+#### Output
+Das Skript 2 produziert ein Output File (an einer Position welche beim Aufruf vom Skript mit dem Flag -o definiert wird). Dieses Output File kann in einen nächsten Schritt mit einem weiteren Skript grafisch dargestellt werden.\
 Das Output File ist im CSV Syntax. Es beginnt immer mit dem Titel:
 ```
 Zielverzeichnis,Datum,Commit-Hash,Author
