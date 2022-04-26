@@ -101,8 +101,8 @@ Der Befehl gibt das hier zurück:
 git_extract_commits.py [-d] -b BASE_DIR -o OUTPUT_FILE
 ```
 Das BASE_DIR ist der Ordner welcher die Git Repos beinhaltet von welchen man die Git Commits ins Output File herausschreiben möchte.\
-Das OUTPUT_FILE beschreibt der Pfad wohin das Output File geschrieben werden soll. 
-Note: Wenn berechtigungen fehlen oder OUTPUT_FILE ein Directory ist wird das Skript mit einem Fehler enden.\
+Das OUTPUT_FILE beschreibt der Pfad wohin das Output File geschrieben werden soll.\
+NOTE: Wenn berechtigungen fehlen oder OUTPUT_FILE ein Directory ist wird das Skript mit einem Fehler enden.\
 Mit dem Flag -d kann der Debug Modus aktiviert werden. Damit werden Informationen auf dem DEBUG Level sowohl in die Konsole wie auch ins Logfile geschrieben.
 
 #### Output
