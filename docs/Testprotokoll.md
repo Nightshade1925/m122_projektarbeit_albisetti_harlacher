@@ -29,7 +29,7 @@
 
 | Testfall | Testbeschreibung | Testdaten | erwartetes Testresultat | erhaltenes Testresultat | Tester | Testdatum und Teststatus |
 |  - | - | - | - | - | - | - |
-| Erstmaliger Aufruf | Das Skript soll mit einem Verzeichnis als parameter augerufen werden in welchem 2 Repos sind:<pre> sudo python3 git_extract_commits.py -b / -f /tmp/commits.csv</pre> | Verzeichnis mit den GIT-Repos die mit dem Skript 1 geklont wurden:<pre>/tmp/myrepos</pre> | Alle Repos aus /tmp/myrepos werden gelesen und ein File /tmp/commits.csv erstellt mit allen Commits beider Repos | File mit allen Commit wurde erstellt. |Benjamin Harlacher|26.04.2022 Bestanden|
+| Erstmaliger Aufruf | Das Skript soll mit einem Verzeichnis als parameter augerufen werden in welchem 2 Repos sind:<pre> sudo python3 git_extract_commits.py -b /tmp/myrepos -o /tmp/commits.csv</pre> | Verzeichnis mit den GIT-Repos die mit dem Skript 1 geklont wurden:<pre>/tmp/myrepos</pre> | Alle Repos aus /tmp/myrepos werden gelesen und ein File /tmp/commits.csv erstellt mit allen Commits beider Repos | File mit allen Commit wurde erstellt. |Benjamin Harlacher|26.04.2022 Bestanden|
 
 | Testfall | Testbeschreibung | Testdaten | erwartetes Testresultat | erhaltenes Testresultat | Tester | Testdatum und Teststatus |
 |  - | - | - | - | - | - | - |
@@ -37,15 +37,15 @@
 
 | Testfall | Testbeschreibung | Testdaten | erwartetes Testresultat | erhaltenes Testresultat | Tester | Testdatum und Teststatus |
 |  - | - | - | - | - | - | - |
-| Verzeichnis leer | Das Skript soll mit einem Verzeichnis als parameter augerufen werden in welchem nichts ist:<pre> python3 git_extract_commits.py -b /tmp/myrepos -f /tmp/commits.csv</pre> | Ein leeres Verzeichniss | Eine Warnung wird ausgegeben welche sagt, dass kein Repository im Verzeichnis gefunden wrude  |Exception bekommen anstatt eine Warnung |Benjamin Harlacher |26.04.2022 Nicht Bestanden|
+| Verzeichnis leer | Das Skript soll mit einem Verzeichnis als parameter augerufen werden in welchem nichts ist:<pre> python3 git_extract_commits.py -b /tmp/myrepos -o /tmp/commits.csv</pre> | Ein leeres Verzeichniss | Eine Warnung wird ausgegeben welche sagt, dass kein Repository im Verzeichnis gefunden wrude  |Exception bekommen anstatt eine Warnung |Benjamin Harlacher |26.04.2022 Nicht Bestanden|
 
 | Testfall | Testbeschreibung | Testdaten | erwartetes Testresultat | erhaltenes Testresultat | Tester | Testdatum und Teststatus |
 |  - | - | - | - | - | - | - |
-| Verzeichnis ohne Repo | Das Skript soll mit einem Verzeichnis als parameter augerufen werden in welchem kein Repo ist:<pre> python3 git_extract_commits.py -b /tmp/myrepos -f /tmp/commits.csv</pre> | Ein verzeichnis welches kein Repo entält | Eine Warnung wird ausgegeben welche sagt, dass kein Repository im Verzeichnis gefunden wurde  |Exception bekommen anstatt eine Warnung |Benjamin Harlacher |26.04.2022 Nicht bestanden|
+| Verzeichnis ohne Repo | Das Skript soll mit einem Verzeichnis als parameter augerufen werden in welchem kein Repo ist:<pre> python3 git_extract_commits.py -b /tmp/myrepos -o /tmp/commits.csv</pre> | Ein verzeichnis welches kein Repo entält | Eine Warnung wird ausgegeben welche sagt, dass kein Repository im Verzeichnis gefunden wurde  |Exception bekommen anstatt eine Warnung |Benjamin Harlacher |26.04.2022 Nicht bestanden|
 
 | Testfall | Testbeschreibung | Testdaten | erwartetes Testresultat | erhaltenes Testresultat | Tester | Testdatum und Teststatus |
 |  - | - | - | - | - | - | - |
-| Output File ohne Permission | Das Skript soll mit einem Output File als parameter augerufen werden auf welches der momentane user keien berechtigungen hat:<pre> python3 git_extract_commits.py -b /tmp/myrepos -f /var/commits.csv</pre> | Ein Output File Path auf welcher der user kein Zugriff hat | Eine Warnung wird ausgegeben welche sagt, dass Berechtigungen fehlen um das Output File zu erstellen|Ein Exception bekommen anstatt eine Warnung |Benjamin Harlacher | 26.04.2022 Nicht bestanden|
+| Output File ohne Permission | Das Skript soll mit einem Output File als parameter augerufen werden auf welches der momentane user keien berechtigungen hat:<pre> python3 git_extract_commits.py -b /tmp/myrepos -o /var/commits.csv</pre> | Ein Output File Path auf welcher der user kein Zugriff hat | Eine Warnung wird ausgegeben welche sagt, dass Berechtigungen fehlen um das Output File zu erstellen|Ein Exception bekommen anstatt eine Warnung |Benjamin Harlacher | 26.04.2022 Nicht bestanden|
 
 | Testfall | Testbeschreibung | Testdaten | erwartetes Testresultat | erhaltenes Testresultat | Tester | Testdatum und Teststatus |
 |  - | - | - | - | - | - | - |
