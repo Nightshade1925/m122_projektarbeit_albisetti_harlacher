@@ -7,10 +7,21 @@ import os
 
 from utils import Utils
 
+
+# Exception classes
+class LoadReposError(Exception):
+	pass
+
+
+class CreateOutputFileError(Exception):
+	pass
+
+
 logger = logging.getLogger(__name__)
 base_dir = ''
 output_file = ''
 repos = []
+
 
 def initialize():
 	config = Utils.load_config()
@@ -26,11 +37,11 @@ def start():
 		create_output_file()
 		logger.info('Successfully finished extracting commits')
 	except LoadReposError as e:
-		logger.error(f'Failed to load repos: {e}')
+		logger.error(f'WARNING: Failed to load repos because {e}')
 	except CreateOutputFileError as e:
-		logger.error(f'Failed to create output file: {e}')
+		logger.error(f'WARNING: Failed to create output file because {e}')
 	except Exception as e:
-		logger.critical(f'Unexpected error: {e}')
+		logger.critical(f'ERROR: Unexpected error {e}')
 
 
 def check_args():
@@ -51,6 +62,7 @@ def check_args():
 		logger.debug('Debug mode enabled')
 
 	logger.debug('Arguments check finished successfully')
+
 
 def load_repos_from_base_dir():
 	logger.info(f'Loading repos from base dir: {base_dir}')
@@ -79,7 +91,6 @@ def create_output_file():
 		logger.debug('Writing header to output file')
 		output_file.write('Zielverzeichnis,Datum,Commit-Hash,Author')
 	except Exception as e:
-		output_file.close()
 		raise CreateOutputFileError(f'unable to write to output file: {e}')
 
 	for repo in repos:
@@ -104,10 +115,3 @@ if __name__ == '__main__':
 	initialize()
 	start()
 
-
-# Exception classes
-class LoadReposError(Exception):
-	pass
-
-class CreateOutputFileError(Exception):
-	pass
