@@ -41,4 +41,4 @@ logpath   - Definiert wo das Logfile gespeichert wird
 
 ## Abgrenzungen zum Lösungsdesign
 
-TODO: Nachdem das Programm verwirklicht wurde hier die unterschiede von der Implemenatino zum Lösungsdesign beschreiben (was wurde anders gemacht, was wurde nicht gemacht, was wurde zusaetzlich gemacht)
+Es gab keine Abgrenzungen. Wir haben die Scripts gemäss unseren Lösungsdesigns erstellt.
