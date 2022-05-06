@@ -89,7 +89,7 @@ def create_output_file():
 		output_file = open(output_file, 'w+')
 		# write header
 		logger.debug('Writing header to output file')
-		output_file.write('Zielverzeichnis,Datum,Commit-Hash,Author')
+		output_file.write('Zielverzeichnis,Datum,Commit-Hash,Author\n')
 	except Exception as e:
 		raise CreateOutputFileError(f'unable to write to output file: {e}')
 
