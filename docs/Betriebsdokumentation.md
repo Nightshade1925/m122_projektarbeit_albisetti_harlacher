@@ -21,7 +21,7 @@ sudo apt install python3-pip
 pip3 install gitpython
 ```
 
-Beide Skripts befinden sich in diesem Git Repository. Desswegen ist es empfolen das gesamte Repository zu klonen:
+Beide Skripts befinden sich in diesem Git Repository. Deswegen ist es empfolen das gesamte Repository zu klonen:
 ```
 git clone https://github.com/Nightshade1925/m122_projektarbeit_albisetti_harlacher.git
 ```
@@ -32,12 +32,11 @@ WICHTIG: Die erfolgreiche Ausführung der Skripts erfordert den Zugriff auf das 
 ../etc/config.json
 ```
 Ebenfalls muss das utils.py File im selben Ordner sein wie die beiden Skripts.
-Ansonstens spielt es keine Rolle wo die Skirpts installiert werden.
+Ansonstens spielt es keine Rolle wo die Skripts installiert werden.
 
 Es gibt keine Skriptspezifische installationen. Beide Skripts funktionieren nach der oben beschriebenen Installation.
 
 ### Konfiguration
-TODO: Beschreibung der Konfigurationsfiles (Beispiel-Files erstellen im Repo)
 Das Konfigurationsfile ist config.json und wird von beiden Skripts verwendet.\
 Beispielkonfiguration:
 ```json
@@ -69,7 +68,7 @@ WICHTIG: Zwischen den beiden Spalten muss es ein Abstand haben als Spaltentrennu
 #### Skriptaufruf
 Aufruf:          
 ```
-Bsp:              sudo python3 git_clone_update_repos.py -b /home/vagrant -f m122_projektarbeit_albisetti_harlacher/etc/input_file.csv
+Bsp:              sudo python3 m122_projektarbeit_albisetti_harlacher/bin/git_clone_update_repos.py  m122_projektarbeit_albisetti_harlacher/etc/input_file.csv
                   sudo python3 PfadZumScript -b PfadZumZielOrt -f PfadZumInputFile (CSV Datei)
 ```
 
