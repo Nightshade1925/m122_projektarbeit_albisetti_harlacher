@@ -45,8 +45,7 @@
 
 | Testfall | Testbeschreibung | Testdaten | erwartetes Testresultat | erhaltenes Testresultat | Tester | Testdatum und Teststatus |
 |  - | - | - | - | - | - | - |
-| Output File ohne Permission | Das Skript soll mit einem Output File als parameter augerufen werden auf welches der momentane user keien berechtigungen hat:<pre> python3 git_extract_commits.py -b /tmp/myrepos -o /var/commits.csv</pre> | Ein Output File Path auf welcher der user kein Zugriff hat | Eine Warnung wird ausgegeben welche sagt, dass Berechtigungen fehlen um das Output File zu erstellen|Ein Exception bekommen anstatt eine Warnung |Benjamin Harlacher | 26.04.2022 Nicht bestanden
-30.04.2022|
+| Output File ohne Permission | Das Skript soll mit einem Output File als parameter augerufen werden auf welches der momentane user keien berechtigungen hat:<pre> python3 git_extract_commits.py -b /tmp/myrepos -o /var/commits.csv</pre> | Ein Output File Path auf welcher der user kein Zugriff hat | Eine Warnung wird ausgegeben welche sagt, dass Berechtigungen fehlen um das Output File zu erstellen|Ein Exception bekommen anstatt eine Warnung |Benjamin Harlacher|26.04.2022 Nicht bestanden 30.04.2022 Bestanden|
 
 | Testfall | Testbeschreibung | Testdaten | erwartetes Testresultat | erhaltenes Testresultat | Tester | Testdatum und Teststatus |
 |  - | - | - | - | - | - | - |
