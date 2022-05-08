@@ -1,7 +1,21 @@
 # Betriebsdokumentation
 
-[[_TOC_]]
-
+  * [Installationsanleitung für Administratoren](#installationsanleitung-f-r-administratoren)
+    * [Installation](#installation)
+      - [Anforderungen](#anforderungen)
+      - [Allgemeine Installation](#allgemeine-installation)
+    + [Konfiguration](#konfiguration)
+  * [Bediensanleitung Benutzer](#bediensanleitung-benutzer)
+    + [Skript 1](#skript-1)
+      - [Erzeugen von Input-Files](#erzeugen-von-input-files)
+      - [Skriptaufruf](#skriptaufruf)
+      - [Output](#output)
+    + [Skript 2](#skript-2)
+      - [Voraussetzung](#voraussetzung)
+      - [Skriptaufruf](#skriptaufruf-1)
+      - [Output](#output-1)
+    + [Logs](#logs)
+  
 ## Einführungstext 
 
 Das  Skript 1 klont alle GIT-Repos mit GIT-Kommandos und speichert sie in einem Verzeichnis. Das Skript 2 liest von allen GIT-Repos in diesem Verzeichnis alle Commits aus und speichert diese in einem File mit einem bestimtmen Format.\
@@ -9,7 +23,7 @@ In einen nächsten Schritt wird das Output File mit einen zu Verfügung gestellt
 
 ## Installationsanleitung für Administratoren
 ### Installation
-#### Requirements
+#### Anforderungen
 1. Ubuntu Server installation (18.4 oder 20.4).
 2. Überprüfen das Python 3 installiert ist.
 ```
