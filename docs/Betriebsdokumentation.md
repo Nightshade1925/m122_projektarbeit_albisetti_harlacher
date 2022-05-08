@@ -1,5 +1,7 @@
 # Betriebsdokumentation
+
 [[_TOC_]]
+
 ## Einführungstext 
 
 Das  Skript 1 klont alle GIT-Repos mit GIT-Kommandos und speichert sie in einem Verzeichnis. Das Skript 2 liest von allen GIT-Repos in diesem Verzeichnis alle Commits aus und speichert diese in einem File mit einem bestimtmen Format.\
